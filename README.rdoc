@@ -1,8 +1,8 @@
-==== Blink(1) and Build light Build Indicator for Go.cd Projects
+==== Delcom Build light Indicator for Go.cd Projects
 
-blink(1) is one of the best indicator lights that you can purchase nowadays. If you want to track your CI/CDP pipeline and you have a rotating build champion for the team, this script helps you to monitor your builds.
+Delcom Light is one of the best indicator lights that you can purchase nowadays. 
 
-To get more info about blink(1), please visit their official [site](http://blink1.thingm.com/).
+You can see a picture of the light here: http://www.delcomproducts.com/images/Beacon3.jpg
 
 === Installation
 
