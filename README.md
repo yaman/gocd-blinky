@@ -6,6 +6,48 @@ To get more info about blink(1), please visit their official [site](http://blink
 
 ## Installation
 
+=== Operating Systems
+* OSX
+* Linux
+* Windows 
+
+=== CI Servers
+Any server that supports the {cctray}[http://confluence.public.thoughtworks.org/display/CI/Multiple+Project+Summary+Reporting+Standard]  xml format, including among others:
+
+* Go - watch https://go-server:8154/go/cctray.xml
+* Jenkins/Hudson - watch http://jenkins-server:8080/cc.xml
+* travis - watch https://api.travis-ci.org/repositories/owner/project/cc.xml
+* tddium - watch 'Configure with CCMenu' (something like https://api.tddium.com/cc/long_uuid_string/cctray.xml)
+
+== How Do I install go.cd-blinky?
+
+=== OSX and Linux
+    
+Install lib-usb-1.0 with your favourite package manager, and then install the blinky gem
+    
+For example, on OSX:
+    
+  brew install libusb
+  
+on Debian or Ubuntu:
+
+  apt-get install libusb-1.0-0-dev
+
+and so on
+    
+=== Windows
+     
+Windows can be a bit fiddly. The following is how I got a Delcomm II light to work on a Windows 7 laptop.
+Further experience reports/better instructions would be gratefully received.
+
+* installed Zadig (http://github.com/pbatard/libwdi/wiki#wiki-Downloads)
+* plugged in the USB light
+  * at this point windows 'helpfully' installed an incorrect 'USB Input device' driver
+* opened Zadig and selected 'Options -> List All Devices'
+* Selected 'USB Input Device' in the Zadig drop-down
+* Clicked on 'Replace Driver' and confirmed in the popup dialog
+* installed the blinky gem
+                          
 If you are using rb-env, it's super simple. Just run:
 
     `bundle install`
