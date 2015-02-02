@@ -6,7 +6,7 @@ require 'blink1'
 include Chicanery::Git
 include Chicanery::Cctray
 
-cctray 'travis', 'http://teamcity2.hepsiburada.com:1029/guestAuth/app/rest/cctray/projects.xml'
+cctray 'go', 'http://ci.hepsiburada.com/go/cctray.xml'
 
 poll_period 5
 
@@ -20,14 +20,9 @@ SUCCESS = "SUCCESS"
 FAILURE = "FAILURE"
 
 when_run do |state|
-  state[:servers]["travis"].delete_if { |v|
-    !(v.include? "HBAdmin" or
-      v.include? "Marketplace" or
-      v.include? "ListingAndAvailability" or
-      v.include? "MerchantAdmin" or
-      v.include? "MerchantService" or
-      v.include? "OrderManagement" or
-      v.include? "Product Information Management")
+  state[:servers]["go"].delete_if { |v|
+    !(v.include? "Storefront.Web" or
+      v.include? "ProductInformation")
     }
   if state.has_failure?
     blink(FAILURE)
